@@ -1,0 +1,79 @@
+
+{% extends 'medilab.html'%}
+
+{%block content%}
+	
+<section class="breadcrumbs">
+	<div class="container">
+
+		<div class="d-flex justify-content-between align-items-center">
+			<h2>Prediction Page</h2>
+			<ol>
+				<li><a href="{% url 'home'%}">Home</a></li>
+				<li>Prediction Page</li>
+			</ol>
+		</div>
+
+	</div>
+</section>
+	<!-- container -->
+	<div class="container prediction">
+
+		
+
+		<div class="row ">
+			
+			<!-- Article main content -->
+			<article class="col-sm-9 maincontent">
+				<header class="page-header">
+					<h1 class="page-title text-dark">your results are ready:</h1>
+				</header>
+				
+				
+				<br>
+					<div class=" container text-left">
+						<h1 class="btn btn-light p-4 ">Unfortunately we predict that you might have </h1>
+							<br>
+							<hr>
+							<span class="label text-white p-3 bg-danger">{{prediction}}</span></h1>
+
+							
+
+							<a href="{% url 'home' %}" type="button" class="btn btn-link">  back to homepage</a>
+					</div>
+
+			</article>
+			<!-- /Article -->
+			
+			<!-- Sidebar -->
+			<aside class="col-sm-3 sidebar sidebar-right">
+
+				<div class="widget">
+						<div class="panel panel-danger">
+							<div class="panel-heading text-warning "><b>Beware</b> </div>
+							<div class="panel-body">
+								
+								<h6 class="p-3 mb-2 btn-secondary text-white"">we recommend that you visit a Doctor as soon as possible.</h4>
+							</div>
+						
+						</div>
+				</div>
+
+			</aside>
+			<!-- /Sidebar -->
+
+		</div>
+	</div>	<!-- /container -->
+	
+	<section class="container-full top-space">
+		<div id="map"></div>
+	</section>
+<style>
+	.prediction{
+		padding-top:90px;
+	}
+</style>
+	{%endblock%}
+
+
+

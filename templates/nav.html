@@ -1,0 +1,30 @@
+<!-- Fixed navbar -->
+{% load static %}
+<div class="navbar navbar-inverse navbar-fixed-top headroom">
+    <div class="container">
+        <div class="navbar-header">
+            <!-- Button for smallest screens -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span
+                    class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <a class="navbar-brand" href="{% url 'home'%}"><img src="{% static 'images/logo.png'%}"
+                    alt="Progressus HTML5 template"></a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav pull-right">
+                <li class="active"><a href="{% url 'home'%}">Home</a></li>
+                <li><a href="{% url 'about'%}">About</a></li>
+                <li><a href="{% url  'contact' %}">Contact</a></li>
+                {% if request.user.is_authenticated %}
+                <li><a class="active">welcome {{request.user.username}} we hope you're healthy</a></li>
+                <li><a class="btn" href="{% url 'logoutUser' %}"">LogOut</a></li>
+                
+                {%else %}
+            <li><a class="btn" href="{% url 'loginUser' %}">SIGN IN / SIGN UP</a></li>
+                {% endif %}
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</div>
+
+<!-- /.navbar -->
